@@ -20,4 +20,18 @@
      expect(component.find('button')).to.exist;
    });
 
+   describe('entering some text', () => {
+     beforeEach(() => {
+       component.find('textarea').simulate('change','new comment');
+     });
+
+     it('shows that text in the textarea', () => {
+       expect(component.find('textarea')).to.have.value('new comment');
+     });
+
+     it('when submitted, clears the input', () => {
+
+     });
+   });
+
  });

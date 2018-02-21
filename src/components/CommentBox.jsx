@@ -8,15 +8,19 @@
    handleChange(event) {
      this.setState({ comment: event.target.value });
    }
+   handleSubmit(event) {
+     event.preventDefault();
+     this.setState({ comment: '' });
+   }
    render() {
      return(
-       <div className="comment-box">
+       <form className="comment-box" onSubmit={this.handleSubmit.bind(this)}>
          <textarea
            onChange={this.handleChange.bind(this)}
            value={this.state.comment}
           />
          <button>Submit Comment</button>
-        </div>
+        </form>
      )
    }
  }
